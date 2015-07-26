@@ -1,0 +1,102 @@
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- Lock viewport to prevent scaling -->
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<meta name="description" content="Bootstrap Starter">
+
+  <title>ArcGIS JS Bootstrap Starter</title>
+</head>
+
+<body>
+  <!-- <h1>Welcome to ArcGIS on Meteor!</h1> -->
+</body>
+
+<template name="ArcGIS">
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="fluid-container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" data-toggle="modal" data-target="#myModal">Bootstrap Starter</a>
+      </div>
+      <div id="navbar" class="collapse navbar-collapse">
+        <!-- Add the Search widget -->
+        <form class="navbar-form navbar-right">
+          <div id="searchDiv"></div>
+        </form>
+        <!-- Add nav elements with some tooltips -->
+        <ul class="nav navbar-nav navbar-right">
+          <li data-toggle="tooltip" title="Show 2D View" data-placement="bottom" id="2dTabSelect">
+            <a href="#2dTab" class="active" aria-controls="2Dtab" role="tab" data-toggle="tab">Map</a>
+          </li>
+          <!-- 3D not supported on mobile and iPad devices -->
+          <li data-toggle="tooltip" title="Show 3D View" data-placement="bottom" id = "3dTabSelect">
+            <a href="#3dTab" aria-controls="3Dtab" role="tab" data-toggle="tab">Scene</a>
+          </li>
+          <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Basemaps <b class="caret"></b></a>
+            <ul class="dropdown-menu" id="basemapsDropdown">
+              <li data-toggle="tooltip" title="Select a basemap" data-placement="right"><a href="#">Streets</a></li>
+              <li data-toggle="tooltip" title="Select a basemap" data-placement="right"><a href="#">Satellite</a></li>
+              <li data-toggle="tooltip" title="Select a basemap" data-placement="right"><a href="#">National Geographic</a></li>
+              <li data-toggle="tooltip" title="Select a basemap" data-placement="right"><a href="#">Topographic</a></li>
+              <li data-toggle="tooltip" title="Select a basemap" data-placement="right"><a href="#">Gray</a></li>
+              <li data-toggle="tooltip" title="Select a basemap" data-placement="right"><a href="#">Dark Gray</a></li>
+              <li class="divider"></li>
+              <li data-toggle="tooltip" title="Select a basemap" data-placement="right"><a href="#">Open Street Map</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </nav><!--/.navbar -->
+
+  <!-- Modal Window - example of a modal window -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">About this Bootstrap Starter</h4>
+        </div>
+        <div class="modal-body">
+          <p>
+            This sample illustrates how to build a simple responsive app with the <a href="http://developers.arcgis.com">ArcGIS API for JavaScript 4.0 beta 1</a> and <a href="http://getbootstrap.com">Bootstrap</a>.
+        </p>
+        <p>
+            The sample shows how to:
+            <ul>
+              <li>Add the ArcGIS CSS and ArcGIS API Library</li>
+              <li>Style the map to fill the full screen</li>
+              <li>Set up a navigation bar, nav elements, tooltips and tabs</li>
+              <li>Use @media queries and jQuery to style components</li>
+            </ul>
+          </p>
+          <p>
+            Learn more about the Bootstrap framework <a href="http://getbootstrap.com">here</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div> <!--/.modal -->
+
+  <!-- Container - fluid container to consume full width of screen -->
+  <div class="fluid-container" style="background: #777">
+    <div id="tabContainer" class="tab-content">
+      <div class="tab-pane fade in active" role="tabpanel" id="2dTab">
+        <div id="mapViewDiv"></div>
+      </div>
+      <div class="tab-pane fade" role="tabpanel" id="3dTab">
+        <div id="sceneViewDiv"></div>
+      </div>
+    </div>
+  </div><!-- /.container -->
+
+</template>
